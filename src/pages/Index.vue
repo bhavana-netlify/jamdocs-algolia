@@ -1,6 +1,7 @@
 <template>
   <Layout :sidebar="false">
     <div class="content">
+    <div id="search"></div>
       <h1>{{ $static.metadata.siteName }} - {{ this.description }}</h1>
       <nav>
         <!-- To use other icons here, you need to import them in the Shortcut component -->
