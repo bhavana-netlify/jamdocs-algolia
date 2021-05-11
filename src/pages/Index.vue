@@ -14,20 +14,12 @@
   </Layout>
 
 
-<link
+<!-- <!-- <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css"
 />
-<script src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js"></script>
-<script>
-  algoliasearchNetlify({
-    appId: {{appId}},
-    apiKey: {{apiKey}},
-    siteId: {{siteId}},
-    branch: 'master',
-    selector: 'div#search',
-  });
-</script>
+<script src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js"></script> -->
+
 </template>
 
 
@@ -45,6 +37,7 @@ query {
 <script>
 import GitLink from '~/components/GitLink.vue'
 import Shortcut from '~/components/Shortcut.vue'
+//import algoliasearchNetlify from 'https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js'
 
 export default {
   components: {
@@ -54,11 +47,23 @@ export default {
   data() {
     return {
       description: 'The ultimate static generated documentation theme for the JAM-stack',
-      appId: process.env.VUE_APPID,
-      apiKey: process.env.VUE_APIKEY,
-      siteId: process.env.VUE_SITEID
+      appId: process.env.GRIDSOME_APPID,
+      apiKey: process.env.GRIDSOME_APIKEY,
+      siteId: process.env.GRIDSOME_SITEID
     }
   },
+  // mounted(){
+  // let algolia = document.createElement('script')
+  // algolia.setAttribute('src', 'https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js')
+  // document.head.appendChild(algolia)
+  //     algoliasearchNetlify({
+  //     appId: this.appId,
+  //     apiKey: this.apiKey,
+  //     siteId: this.siteId,
+  //     branch: 'master',
+  //     selector: 'div#search',
+  // });
+  // },
   metaInfo() {
     return {
       title: this.description,
