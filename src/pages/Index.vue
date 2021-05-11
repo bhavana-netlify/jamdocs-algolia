@@ -11,7 +11,27 @@
       <GitLink class="git" size="large" />
     </div>
   </Layout>
+
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js"></script>
+<script>
+  algoliasearchNetlify({
+    appId: {{appId}},
+    apiKey: {{apiKey}},
+    siteId: {{siteId}},
+    branch: 'master',
+    selector: 'div#search',
+  });
+</script>
 </template>
+
+
+
+
 
 <static-query>
 query {
@@ -33,6 +53,9 @@ export default {
   data() {
     return {
       description: 'The ultimate static generated documentation theme for the JAM-stack'
+      appId: process.env.VUE_APPID,
+      apiKey: process.env.VUE_APIKEY,
+      siteId: process.env.VUE_SITEID
     }
   },
   metaInfo() {
