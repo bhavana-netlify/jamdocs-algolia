@@ -52,7 +52,7 @@ export default {
   },
   data() {
     return {
-      description: 'The ultimate static generated documentation theme for the JAM-stack'
+      description: 'The ultimate static generated documentation theme for the JAM-stack',
       appId: process.env.VUE_APPID,
       apiKey: process.env.VUE_APIKEY,
       siteId: process.env.VUE_SITEID
